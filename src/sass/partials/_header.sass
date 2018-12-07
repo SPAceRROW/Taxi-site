@@ -1,0 +1,340 @@
+.header
+	position: fixed
+	left: 0
+	top: 0
+	right: 0
+	transition: all .3s ease
+	z-index: 1000
+	.container
+		position: relative
+		overflow: hidden
+	&__wrapper
+		display: flex
+		position: relative
+	.hiden-description
+		display: none
+	&.scroll
+		background: #2697d3
+		box-shadow: 0 5px 5px 0 rgba(46, 137, 201, .2)
+		.hiden-description
+			display: block
+			.description
+				max-width: 170px
+				padding: 17px 0
+				color: $white
+				+r(576)
+					max-width: 140px
+					font-size: 12px
+		.header__wrapper
+			height: 80px
+			.logo
+				width: 80px
+				margin-right: 10px
+				img
+					width: 50px
+		.nav
+			border-top: 1px solid $curious-blue-dark
+			display: flex
+			align-items: center
+			height: calc( 100vh - 80px )
+			background: #2697d3
+			color: $white
+			transform: translateX(100vw)
+			transition: all .3s ease
+			padding: 20px 0
+			z-index: 990
+			box-shadow: 0 5px 25px 0 rgba(46, 137, 201, .2)
+			&.active
+				transform: translateX(0)
+			a
+				color: $white
+			margin-top: 80px
+			overflow-y: auto
+			max-width: 320px
+			right: 0
+			left: auto
+			position: fixed
+			&-button
+				display: block
+			.menu
+				display: block
+				border: none
+				a
+					text-align: center
+					&::before
+						background: $white
+			.callback
+				flex-direction: column
+				padding: 10px 0
+				height: 100%
+				min-height: 220px
+				.description
+					margin: 0 0 10px
+					text-align: center
+				.tel
+					margin: 0 0 10px
+					&::before
+						content: url('../img/telephone-white.svg')
+				.whatsapp
+					&::before
+						content: url('../img/whatsapp.svg')
+			.button
+				color: $white
+				border-color: $white
+				&::before
+					background: $white
+				&:hover
+					color: $curious-blue
+	+r(1200)
+		background: #2697d3
+		box-shadow: 0 5px 5px 0 rgba(46, 137, 201, .2)
+		.hiden-description
+			display: block
+			.description
+				max-width: 170px
+				padding: 17px 0
+				color: $white
+
+		.header__wrapper
+			height: 80px
+			.logo
+				width: 80px
+				margin-right: 10px
+				img
+					width: 50px
+		.nav
+			border-top: 1px solid $curious-blue-dark
+			display: flex
+			align-items: center
+			height: calc( 100vh - 80px )
+			background: #2697d3
+			color: $white
+			transform: translateX(100vw)
+			transition: all .3s ease
+			padding: 20px 0
+			z-index: 990
+			box-shadow: 0 5px 25px 0 rgba(46, 137, 201, .2)
+			&.active
+				transform: translateX(0)
+			a
+				color: $white
+			margin-top: 80px
+			overflow-y: auto
+			max-width: 320px
+			right: 0
+			left: auto
+			position: fixed
+			&-button
+				display: block
+			.menu
+				display: block
+				border: none
+				a
+					text-align: center
+					&::before
+						background: $white
+			.callback
+				flex-direction: column
+				padding: 10px 0
+				height: 100%
+				min-height: 220px
+				.description
+					margin: 0 0 10px
+					text-align: center
+				.tel
+					margin: 0 0 10px
+					&::before
+						content: url('../img/telephone-white.svg')
+				.whatsapp
+					&::before
+						content: url('../img/whatsapp.svg')
+			.button
+				color: $white
+				border-color: $white
+				&::before
+					background: $white
+				&:hover
+					color: $curious-blue
+	+r(576)
+		.hiden-description
+			.description
+				max-width: 140px
+				font-size: 12px
+.nav
+	display: flex
+	flex-direction: column
+	width: 100%
+	padding-top: 5px
+	&-button
+		width: 40px
+		height: 40px
+		position: absolute
+		right: 15px
+		z-index: 1100
+		top: 50%
+		transform: translateY(-50%)
+		display: none
+		+r(1200)
+			display: block
+		.bar
+			position: relative
+			width: 30px
+			height: 3px
+			background: $white
+			top: 20px
+			margin: 0 auto
+			transition: all .3s ease
+			&::before, &::after
+				content: ''
+				width: 30px
+				height: 3px
+				position: absolute
+				background: $white
+				transition: all .3s ease
+			&::before
+				transform: translateY(-8px)
+			&::after
+				transform: translateY(8px)
+		&.active
+			.bar
+				background: transparent
+				&::before
+					transform: rotate(135deg)
+					background: $white
+				&::after
+					transform: rotate(-135deg)
+					background: $white
+.menu
+	display: flex
+	display: -webkit-box
+	text-transform: uppercase
+	justify-content: space-between
+	font-weight: 700
+	font-size: 11px
+	border-bottom: 1px solid $link-water
+	transition: all .4s ease
+	a
+		color: $bunker
+		display: block
+		padding: 15px 10px
+		position: relative
+		line-height: 1em
+		&::before
+			content: ''
+			background: $curious-blue
+			width: 100%
+			height: 3px
+			position: absolute
+			bottom: -1px
+			left: 0
+			transform: scale(0)
+			transition: all .5s ease
+			opacity: 0
+		&:hover, &:focus
+			&::before
+				transform: scale(1)
+				opacity: 1
+.callback
+	display: flex
+	padding: 30px 0
+	align-items: center
+	height: 100%
+
+	.description
+		max-width: 170px
+		margin-right: 80px
+		font-weight: 300
+	a
+		display: block
+		position: relative
+		padding: 10px 0
+		transition: all .4s ease
+		&.tel
+			padding-left: 30px
+			color: $bunker
+			font-size: 18px
+			font-weight: 700
+			margin-right: 30px
+			position: relative
+			&:last-of-type
+				margin-right: 55px
+			&::before
+				content: url('../img/telephone.svg')
+				width: 20px
+				height: 20px
+				position: absolute
+				left: 0
+			&::after
+				content: ''
+				width: 3px
+				height: 0
+				background: $curious-blue
+				position: absolute
+				left: -10px
+				top: 0
+				transition: all .5s ease
+				opacity: 0
+			&:hover
+				&::after
+					height: 100%
+					opacity: 1
+
+		&.whatsapp
+			&::before
+				content: url('../img/whatsapp.svg')
+.button
+	position: relative
+	font-family: $default-font
+	text-transform: uppercase
+	background: transparent
+	z-index: 99
+	font-size: 12px
+	font-weight: 500
+	letter-spacing: 0.025em
+	transition: 0.4s all ease
+	display: block
+	padding: 15px 35px
+	line-height: 1em
+	cursor: pointer
+	border: 1px solid $curious-blue-dark
+	border-radius: 2px
+	&:before
+		position: absolute
+		content: ''
+		width: 0%
+		height: 100%
+		background: $curious-blue-dark
+		top: 0
+		left: auto
+		right: 0
+		z-index: -1
+		transition: all .5s ease
+	&:hover
+		color: white
+		transform: translateY(2px)
+		box-shadow: 0 10px 15px 0 rgba(46, 137, 201, .3)
+		&:before
+			position: absolute
+			content: ''
+			width: 100%
+			height: 100%
+			background: $curious-blue-dark
+			top: 0
+			left: 0
+			right: 0
+			z-index: -1
+	&:active
+		transform: translateY(2px)
+		box-shadow: 0 5px 10px 0 rgba(46, 137, 201, .2)
+
+.logo
+	width: 170px
+	position: relative
+	display: block
+	margin-right: 30px
+	img
+		width: 140px
+		margin: 10px 15px
+		height: auto
+		transition: all .4s ease
+

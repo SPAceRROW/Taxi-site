@@ -1,0 +1,97 @@
+.first-screen
+	position: relative
+	min-height: 750px
+	margin-top: 175px
+	padding: 220px 0 250px
+	+r(1200)
+		margin-top: 80px
+	&__wrapper
+		z-index: 1
+		color: $white
+	.main-title
+		position: relative
+		margin-bottom: 60px
+		h1
+			font-weight: 900
+			font-size: 48px
+			text-transform: uppercase
+			margin-bottom: 20px
+			line-height: 1em
+			span
+				background: $maroon-flush
+				padding: 5px 10px
+		h2
+			font-weight: 900
+			font-size: 13px
+			text-transform: uppercase
+			line-height: 1em
+			margin-bottom: 25px
+			span
+				font-size: 48px
+				line-height: 1em
+		p
+			font-weight: 500
+			font-size: 18px
+	.main-button
+		color: $white
+		font-weight: 500
+		font-size: 16px
+		text-transform: uppercase
+		letter-spacing: 0.05em
+		padding: 20px 70px
+		border-radius: 4px
+		background-image: linear-gradient( to top, rgb(162,32,55) 0%, rgb(234,38,67) 100%)
+		box-shadow: 2.5px 4.33px 40px 0 rgba(208, 36, 63, 0.15),inset 0px -6px 0px 0px rgba(128, 20, 36, .8)
+		z-index: 1
+		position: relative
+		transition: .3s ease-out
+		display: inline-block
+		overflow: hidden
+		&:hover
+			box-shadow: 2.5px 4.33px 40px 0 rgba(208, 36, 63, 0.3),inset 0px -4px 0px 0px rgba(128, 20, 36, .8)
+			background-image: linear-gradient( to top, rgb(162,32,55) 0%, rgb(234,38,67) 80%)
+			transform: translateY(1px)
+		&:active
+			transform: translateY(2px)
+			box-shadow: 2.5px 4.33px 40px 0 rgba(208, 36, 63, 0.3),inset 0px -6px 0px 0px rgba(128, 20, 36, .8)
+
+		&.light
+			&:hover
+				cursor: pointer
+				transition: .1s
+				color: $white
+				z-index: 8
+				&:before
+					transform: skewX(-45deg) translateX(420px)
+					transition: all .5s ease-in-out
+			&:before
+				content: ""
+				background: linear-gradient( to right, rgba(255,255,255,0) 0% ,rgba(255,255,255,.3) 100%)
+				height: 100%
+				width: 5em
+				display: block
+				position: absolute
+				top: 0
+				left: -8em
+				transform: skewX(-45deg) translateX(0)
+				transition: none
+
+.rotate-block
+	position: absolute
+	transform: skew(5deg) translateX(-50%)
+	left: calc( 50% - 45px )
+	right: 0
+	top: -60px
+	z-index: -1
+	width: 100%
+	img
+		left: 50%
+		transform: skew(-5deg)  translateX(-50%)
+		position: absolute
+.abs-bg
+	position: absolute
+	width: 100%
+	height: 500px
+	z-index: -2
+	top: 0
+	background: url("../img/first-screen-bg.jpg") top left repeat-x
